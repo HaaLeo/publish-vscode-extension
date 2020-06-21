@@ -1,14 +1,17 @@
 # Open VSX GitHub Action
 
-[![Stars](https://img.shields.io/github/stars/HaaLeo/publish-open-vsx-github-action.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-open-vsx-github-action/stargazers) 
+[![Build Status](https://github.com/HaaLeo/publish-open-vsx-github-action/workflows/CI/badge.svg)](https://github.com/HaaLeo/publish-open-vsx-github-action/actions?query=workflow%3ACI) [![Stars](https://img.shields.io/github/stars/HaaLeo/publish-open-vsx-github-action.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-open-vsx-github-action/stargazers) 
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://raw.githubusercontent.com/HaaLeo/publish-open-vsx-github-action/master/LICENSE.txt)  
 [![David](https://img.shields.io/david/HaaLeo/publish-open-vsx-github-action.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-open-vsx-github-action) [![David](https://img.shields.io/david/dev/HaaLeo/publish-open-vsx-github-action.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-open-vsx-github-action?type=dev)  
 [![Donate](https://img.shields.io/badge/☕️-Buy%20Me%20a%20Coffee-blue.svg?&style=flat-square)](https://www.paypal.me/LeoHanisch/3eur)
 
-GitHub action to publish your VS Code Extension to the [Open VSX Registry](https://open-vsx.org/)
+GitHub action to publish your VS Code Extension to the [Open VSX Registry](https://open-vsx.org/).
 
+**Note**: This GitHub action was not tested extensively yet and is under continuous development. If you encounter any bugs, please open an [issue](https://github.com/HaaLeo/publish-open-vsx-github-action/issues/new/choose). 
+From [semver.org](https://semver.org/#spec-item-4):
+> 4. Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.
 
-## Usage 
+## Usage
 To use the GitHub Action, you'll need to add it as a step in your [workflow file](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).
 Your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) must be created beforehand.
 By default, the only thing you need to do is set the `pat` (Personal Access Token) parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token).
@@ -23,6 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
       - run: npm ci
       - uses: HaaLeo/publish-open-vsx-github-action@v0
         with:
