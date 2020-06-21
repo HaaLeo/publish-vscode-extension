@@ -1,5 +1,11 @@
-name: 'Open VSX Publish Action'
+name: 'Publish to Open VSX'
 description: 'Publish your VS Code Extension to the Open VSX Registry'
+
+author: HaaLeo
+branding:
+  color: blue
+  icon: package
+
 inputs:
   # Required
   pat:
