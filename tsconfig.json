@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "sourceMap": true,
+        "strictPropertyInitialization": false,
+        "noUnusedLocals": true,
+        "newLine": "LF"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

@@ -1,0 +1,34 @@
+name: 'Open VSX Publish Action'
+description: 'Publish your VS Code Extension to the Open VSX Registry'
+inputs:
+  # Required
+  pat:
+    description: 'Personal access token'
+    required: true
+
+  # Optional
+  extensionFile:
+    description: 'Path to the vsix file to be published. Cannot be used together with packagePath.'
+    required: false
+  registryUrl:
+    description: 'Use the registry API at this base URL'
+    required: false
+    default: 'https://open-vsx.org'
+  packagePath:
+    description: 'Path to the extension to be packaged and published. Cannot be used together with extensionFile.'
+    required: false
+    default: './'
+  baseContentUrl:
+    description: 'Prepend all relative links in README.md with this URL.'
+    required: false
+  baseImagesUrl:
+    description: 'Prepend all relative image links in README.md with this URL.'
+    required: false
+  yarn:
+    description: Use yarn instead of npm while packing extension files.
+    required: false
+    default: false
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

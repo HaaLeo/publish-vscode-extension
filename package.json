@@ -1,0 +1,41 @@
+{
+  "name": "publish-open-vsx-github-action",
+  "version": "0.1.0",
+  "description": "GitHub action to publish your VS Code Extension to the Open VSX Registry.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "ncc build src/index.ts --source-map -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaaLeo/open-vsx-github-action.git"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "open",
+    "vsx",
+    "vscode",
+    "publish",
+    "Visual Studio Code"
+  ],
+  "author": {
+    "name": "HaaLeo",
+    "url": "https://github.com/HaaLeo"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/HaaLeo/open-vsx-github-action/issues"
+  },
+  "homepage": "https://github.com/HaaLeo/open-vsx-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "ovsx": "0.1.0-next.9b4e999"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@zeit/ncc": "^0.22.3",
+    "typescript": "^3.9.5"
+  }
+}
