@@ -13,7 +13,7 @@
                 "${workspaceFolder}/dist/*.js"
             ],
             "sourceMaps": true,
-            "preLaunchTask": "npm: compile"
+            "preLaunchTask": "npm: build"
         }
     ]
 }
