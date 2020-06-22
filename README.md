@@ -38,7 +38,7 @@ jobs:
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v0
         with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
 ```
 
@@ -59,7 +59,7 @@ You can set any or all of the following input parameters:
 
 |Name |Type |Required? |Default |Description
 |-|-|-|-|-
-|`pat` |string  |yes |-|The [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token)
+|`pat` |string  |yes |-|The personal access token to the corresponding registry.
 |`extensionFile` |string  |no | - |Path to the vsix file to be published. Cannot be used together with packagePath.
 |`registryUrl` |string  |no |`https://open-vsx.org` |Use the registry API at this base URL
 |`packagePath` |string |no | `./` |Path to the extension to be packaged and published. Cannot be used together with extensionFile.
