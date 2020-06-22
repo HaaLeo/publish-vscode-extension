@@ -1,5 +1,5 @@
 name: 'Publish VS Code Extension'
-description: 'Publish your VS Code extension to the registry of choice.'
+description: 'Publish your VSCode extension to the VS Marketplace (using vsce) or the Open VSX Registry (using ovsx) with ease.'
 
 author: HaaLeo
 branding:
