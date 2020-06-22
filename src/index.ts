@@ -10,6 +10,7 @@ async function main(): Promise<void> {
     process.on("unhandledRejection", _errorHandler);
 
     const ovsxOptions: OVSXPublishOptions = _getInputs();
+    core.debug(`Start action with options="${ovsxOptions}"`);
 
     if ((!ovsxOptions.packagePath && !ovsxOptions.extensionFile) || (ovsxOptions.packagePath && ovsxOptions.extensionFile)) {
         throw new Error('Please specify either an extension file or a package path, but not both.');
