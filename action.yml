@@ -1,5 +1,5 @@
-name: 'Publish to Open VSX'
-description: 'Publish your VS Code Extension to the Open VSX Registry'
+name: 'Publish VS Code Extension'
+description: 'Publish your VS Code extension to the registry of choice.'
 
 author: HaaLeo
 branding:
