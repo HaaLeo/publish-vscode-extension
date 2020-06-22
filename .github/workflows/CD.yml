@@ -6,7 +6,6 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-jobs:
   build:
     name: Node ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
