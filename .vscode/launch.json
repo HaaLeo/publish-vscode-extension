@@ -13,7 +13,18 @@
                 "${workspaceFolder}/dist/*.js"
             ],
             "sourceMaps": true,
-            "preLaunchTask": "npm: build"
+            "preLaunchTask": "npm: build",
+            "env": {
+                "INPUT_PAT": "test-pat",
+                "INPUT_REGISTRYURL": "'https://marketplace.visualstudio.com'",
+                // "INPUT_REGISTRYURL": "https://open-vsx.org",
+                "INPUT_PACKAGEPATH": "../vscode-timing",
+                "INPUT_YARN": "false",
+                "INPUT_EXTENSIONFILE": "",
+                "INPUT_BASECONTENTURL": "",
+                "INPUT_BASEIMAGESURL": ""
+            },
+            "outputCapture": "std"
         }
     ]
 }
