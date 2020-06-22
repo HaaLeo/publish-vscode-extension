@@ -17,7 +17,7 @@ By default, the only thing you need to do is set the `pat` (Personal Access Toke
 ```yaml
 on: push
 
-name: Deploy Extension to Open VSX
+name: Deploy Extension to Registries
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,11 +27,11 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - name: Publish extension to Open VSX
+      - name: Publish to Open VSX
         uses: HaaLeo/publish-vscode-extension@v0
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-      - name: Publish extension to Visual Studio Marketplace
+      - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v0
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
@@ -57,7 +57,7 @@ You can set any or all of the following input parameters:
 The action exposes the following outputs:
 
 |Name |Type |Description
-|-|-|-|-|-
+|-|-|-
 |`vsixPath` |string |The path to the packaged and published VSIX file.
 
 ## Contribution
