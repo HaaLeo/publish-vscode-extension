@@ -6,12 +6,13 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-  tag v0:
+  tag version:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
+      - name: Update major tag
         run: |
           MAJOR_VERSION=$(git describe --tags | grep -o "v[0-9]*")
           git config --global user.name 'CI'
