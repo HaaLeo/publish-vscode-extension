@@ -9,15 +9,19 @@ GitHub action to publish your VS Code Extension to the [Open VSX Registry](https
 
 ## Usage
 
-To use the GitHub Action, you'll need to add it as a step in your [workflow file](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).
-Your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) must be created beforehand.
-By default, the only thing you need to do is set the `pat` (Personal Access Token) parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token) to publish to the [Open VSX Registry](https://open-vsx.org/). To publish to the [Visual Studio Marketplace](https://marketplace.visualstudio.com) you need to set the `pat` option to the corresponding [access token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token) respectively and `registryUrl: https://marketplace.visualstudio.com`.
+To use the GitHub Action, you need to [reference the action](https://help.github.com/en/actions/automating-your-workflow-with-github-actions) in your workflow file.
 
+### Example
+
+The following example shows a workflow that publishes an extension to the Open VSX Registry as well as to the Visual Studio Marketplace when a new tag was created:
 
 ```yaml
-on: push
+on:
+  push:
+    tags:
+      - "*"
 
-name: Deploy Extension to Registries
+name: Deploy Extension
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,7 +31,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - name: Publish to Open VSX
+      - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v0
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
@@ -38,8 +42,19 @@ jobs:
           registryUrl: https://marketplace.visualstudio.com
 ```
 
+### Open VSX Registry
+
+To publish to the Open VSX Registry ensure that your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) was created **beforehand**.
+By default, the only thing you need to do is to set the `pat` parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token). 
+
+### Visual Studio Marketplace
+
+In order to upload your extension to the VS Marketplace you need to set the `pat` option to the corresponding [access token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token). 
+Further, the `registryUrl` must be set to `https://marketplace.visualstudio.com`.
+
 
 ## Input Parameters
+
 You can set any or all of the following input parameters:
 
 |Name |Type |Required? |Default |Description
@@ -66,5 +81,6 @@ If you found a bug or are missing a feature do not hesitate to [file an issue](h
 Pull Requests are welcome!
 
 ## Support
+
 When you like this extension make sure to [star the repo](https://github.com/HaaLeo/publish-vscode-extension/stargazers). I am always looking for new ideas and feedback.  
 In addition, it is possible to [donate via paypal](https://www.paypal.me/LeoHanisch/3eur).
