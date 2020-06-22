@@ -1,6 +1,6 @@
 {
   "name": "publish-open-vsx-github-action",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "GitHub action to publish your VS Code Extension to the Open VSX Registry.",
   "main": "dist/index.js",
   "scripts": {
