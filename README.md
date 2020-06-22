@@ -1,6 +1,6 @@
 # Publish VS Code Extension &#8212; GitHub Action
 
-[![Build Status](https://github.com/HaaLeo/publish-vscode-extension/workflows/CI/badge.svg)](https://github.com/HaaLeo/publish-vscode-extension/actions?query=workflow%3ACI) [![Build Status](https://github.com/HaaLeo/publish-vscode-extension/workflows/CD/badge.svg)](https://github.com/HaaLeo/publish-vscode-extension/actions?query=workflow%3ACD) [![Stars](https://img.shields.io/github/stars/HaaLeo/publish-vscode-extension.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-vscode-extension/stargazers) 
+[![Build Status](https://github.com/HaaLeo/publish-vscode-extension/workflows/CI/badge.svg)](https://github.com/HaaLeo/publish-vscode-extension/actions?query=workflow%3ACI) [![Stars](https://img.shields.io/github/stars/HaaLeo/publish-vscode-extension.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-vscode-extension/stargazers) 
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://raw.githubusercontent.com/HaaLeo/publish-vscode-extension/master/LICENSE.txt)  
 [![David](https://img.shields.io/david/HaaLeo/publish-vscode-extension.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-vscode-extension) [![David](https://img.shields.io/david/dev/HaaLeo/publish-vscode-extension.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-vscode-extension?type=dev)  
 [![Donate](https://img.shields.io/badge/☕️-Buy%20Me%20a%20Coffee-blue.svg?&style=flat-square)](https://www.paypal.me/LeoHanisch/3eur)
