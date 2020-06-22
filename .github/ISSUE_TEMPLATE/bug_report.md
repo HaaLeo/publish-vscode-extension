@@ -5,7 +5,7 @@ about: Create a report to help us improve
 ---
 
 <!-- Please fulfill the table below-->
-| publish-open-vsx-github-action Version | Operating System |
+| publish-vscode-extension Version | Operating System |
 | -------------------------------------- | ---------------- |
 |                                        |                  |
 
