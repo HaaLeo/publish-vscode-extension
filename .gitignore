@@ -82,6 +82,8 @@ typings/
 .nuxt
 dist/*
 !dist/index.js
+!dist/\[Content_Types\].xml
+!dist/*.vsixmanifest
 
 # Gatsby files
 .cache/
