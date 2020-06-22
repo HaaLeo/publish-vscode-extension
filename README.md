@@ -57,6 +57,14 @@ You can set any or all of the following input parameters:
 |`baseImagesUrl` |string |no | - | Prepend all relative image links in README.md with this URL.
 |`yarn` |boolean |no | `false` | Use yarn instead of npm while packing extension files.
 
+## Outputs
+
+The action exposes the following outputs:
+
+|Name |Type |Description
+|-|-|-|-|-
+|`vsixPath` |string |The path to the packaged and published VSIX file.
+
 ## Contribution
 
 If you found a bug or are missing a feature do not hesitate to [file an issue](https://github.com/HaaLeo/publish-open-vsx-github-action/issues/new/choose).  
