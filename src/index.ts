@@ -1,6 +1,9 @@
+'use strict';
+
 import * as core from '@actions/core';
-import { publish, PublishOptions as OVSXPublishOptions } from 'ovsx';
-import { publish as vscePublish, publishVSIX as vscePublishVSIX, IPublishOptions as VSCEPublishOptions} from 'vsce';
+import { PublishOptions as OVSXPublishOptions } from 'ovsx';
+import { createPackage } from './createPackage';
+import { publish } from './publish';
 
 async function main(): Promise<void> {
     process.on("uncaughtException", _errorHandler);
@@ -8,20 +11,15 @@ async function main(): Promise<void> {
 
     const ovsxOptions: OVSXPublishOptions = _getInputs();
 
-    if ((!ovsxOptions.packagePath && !ovsxOptions.extensionFile)|| (ovsxOptions.packagePath && ovsxOptions.extensionFile)) {
+    if ((!ovsxOptions.packagePath && !ovsxOptions.extensionFile) || (ovsxOptions.packagePath && ovsxOptions.extensionFile)) {
         throw new Error('Please specify either an extension file or a package path, but not both.');
     }
 
-    if (ovsxOptions.registryUrl === 'https://marketplace.visualstudio.com') {
-        const vsceOptions = _convertToVSCEPublishOptions(ovsxOptions);
-        if (ovsxOptions.extensionFile){
-            await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);
-        } else {
-            await vscePublish(vsceOptions);
-        }
-    } else {
-        await publish(ovsxOptions)
-    }
+    const vsixPath = await createPackage(ovsxOptions);
+    core.setOutput('vsixPath', vsixPath);
+
+    ovsxOptions.extensionFile = vsixPath;
+    await publish(ovsxOptions);
 }
 
 function _errorHandler(error: Error): void {
@@ -47,13 +45,6 @@ function _getInputs(): OVSXPublishOptions {
         baseContentUrl: core.getInput('baseContentUrl') || undefined,
         baseImagesUrl: core.getInput('baseImageUrl') || undefined
     }
-}
-
-function _convertToVSCEPublishOptions(options: OVSXPublishOptions): VSCEPublishOptions {
-    // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, pat, yarn:useYarn,  packagePath:cwd } = { ...options };
-    const result = { baseContentUrl, useYarn, pat, baseImagesUrl, cwd };
-    return result;
 }
 
 main();

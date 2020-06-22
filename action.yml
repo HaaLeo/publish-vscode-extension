@@ -34,6 +34,10 @@ inputs:
     required: false
     default: false
 
+outputs:
+  vsixPath:
+    description: The path to the packaged and published VSIX file.
+
 runs:
   using: 'node12'
   main: 'dist/index.js'

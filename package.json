@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build src/index.ts --source-map -m"
+    "build": "ncc build src/index.ts --source-map"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "vsce": "^1.77.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.13",
+    "@types/node": "^12.12.6",
     "@zeit/ncc": "^0.22.3",
     "typescript": "^3.9.5"
   }
