@@ -3,7 +3,7 @@
 import { publish as ovsxPublish, PublishOptions as OVSXPublishOptions } from 'ovsx';
 import { publishVSIX as vscePublishVSIX, IPublishOptions as VSCEPublishOptions } from 'vsce';
 
-async function publish(ovsxOptions: OVSXPublishOptions) {
+async function publish(ovsxOptions: OVSXPublishOptions): Promise<void> {
     if (ovsxOptions.registryUrl === 'https://marketplace.visualstudio.com') {
         const vsceOptions = _convertToVSCEPublishOptions(ovsxOptions);
         await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);

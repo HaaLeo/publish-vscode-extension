@@ -6,8 +6,8 @@ import { createPackage } from './createPackage';
 import { publish } from './publish';
 
 async function main(): Promise<void> {
-    process.on("uncaughtException", _errorHandler);
-    process.on("unhandledRejection", _errorHandler);
+    process.on('uncaughtException', _errorHandler);
+    process.on('unhandledRejection', _errorHandler);
 
     const ovsxOptions: OVSXPublishOptions = _getInputs();
     core.debug(`Start action with options="${JSON.stringify(ovsxOptions)}"`);
@@ -29,7 +29,7 @@ function _errorHandler(error: Error): void {
 }
 
 function _getInputs(): OVSXPublishOptions {
-    let registryUrl = core.getInput('registryUrl')
+    let registryUrl = core.getInput('registryUrl');
 
     if (registryUrl.endsWith('/')) {
         registryUrl = registryUrl.substring(0, registryUrl.length - 1);
@@ -44,7 +44,7 @@ function _getInputs(): OVSXPublishOptions {
         extensionFile: core.getInput('extensionFile') || undefined,
         baseContentUrl: core.getInput('baseContentUrl') || undefined,
         baseImagesUrl: core.getInput('baseImageUrl') || undefined
-    }
+    };
 }
 
-main();
+void main();

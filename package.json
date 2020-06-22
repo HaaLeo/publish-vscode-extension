@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build src/index.ts --source-map --no-source-map-register"
+    "build": "ncc build src/index.ts --source-map --no-source-map-register",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,12 @@
   },
   "devDependencies": {
     "@types/node": "^12.12.6",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
     "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.3.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prefer-arrow": "^1.2.1",
     "typescript": "^3.9.5"
   }
 }

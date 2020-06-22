@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build, Lint and Deploy
 
 on:
   push:
@@ -31,8 +31,8 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install Dependencies
         run: npm ci
-      # - name: Run linters
-      #   run: npm run lint
+      - name: Run Linter
+        run: npm run lint
       - name: Build Code
         run: npm run build
       # - name: Run tests
