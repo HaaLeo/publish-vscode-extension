@@ -23,6 +23,7 @@ inputs:
   packagePath:
     description: 'Path to the extension to be packaged and published. Cannot be used together with extensionFile.'
     required: false
+    default: ./
   baseContentUrl:
     description: 'Prepend all relative links in README.md with this URL.'
     required: false
