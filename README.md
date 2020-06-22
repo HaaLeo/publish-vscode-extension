@@ -1,6 +1,6 @@
 # Publish VS Code Extension &#8212; GitHub Action
 
-[![Build Status](https://github.com/HaaLeo/publish-open-vsx-github-action/workflows/CI/badge.svg)](https://github.com/HaaLeo/publish-open-vsx-github-action/actions?query=workflow%3ACI) [![Stars](https://img.shields.io/github/stars/HaaLeo/publish-open-vsx-github-action.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-open-vsx-github-action/stargazers) 
+[![Build Status](https://github.com/HaaLeo/publish-open-vsx-github-action/workflows/CI/badge.svg)](https://github.com/HaaLeo/publish-open-vsx-github-action/actions?query=workflow%3ACI) [![Build Status](https://github.com/HaaLeo/publish-open-vsx-github-action/workflows/CD/badge.svg)](https://github.com/HaaLeo/publish-open-vsx-github-action/actions?query=workflow%3ACD) [![Stars](https://img.shields.io/github/stars/HaaLeo/publish-open-vsx-github-action.svg?label=Stars&logo=github&style=flat-square)](https://github.com/HaaLeo/publish-open-vsx-github-action/stargazers) 
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://raw.githubusercontent.com/HaaLeo/publish-open-vsx-github-action/master/LICENSE.txt)  
 [![David](https://img.shields.io/david/HaaLeo/publish-open-vsx-github-action.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-open-vsx-github-action) [![David](https://img.shields.io/david/dev/HaaLeo/publish-open-vsx-github-action.svg?style=flat-square)](https://david-dm.org/HaaLeo/publish-open-vsx-github-action?type=dev)  
 [![Donate](https://img.shields.io/badge/☕️-Buy%20Me%20a%20Coffee-blue.svg?&style=flat-square)](https://www.paypal.me/LeoHanisch/3eur)
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 12
       - run: npm ci

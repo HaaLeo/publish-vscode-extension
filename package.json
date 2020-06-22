@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build src/index.ts --source-map"
+    "build": "ncc build src/index.ts --source-map --no-source-map-register"
   },
   "repository": {
     "type": "git",

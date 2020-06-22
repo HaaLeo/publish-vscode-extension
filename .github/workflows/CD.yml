@@ -1,0 +1,58 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+jobs:
+  build:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node:
+          - 12
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Install Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      # - name: Run linters
+      #   run: npm run lint
+
+      - name: Build the code
+        run: npm run build
+
+      # - name: Run tests
+      #   run: npm run coverage
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Update major tag
+        run: |
+          MAJOR_VERSION=$(git describe --tags | grep -o "v[0-9]*")
+          git config --global user.name 'CI'
+          git config --global user.email 'CI@users.noreply.github.com'
+          git tag -afm "Updated tag $MAJOR_VERSION to $(git describe --tags)" $MAJOR_VERSION
+          git push --tags --force
