@@ -38,10 +38,23 @@ jobs:
       - name: Run Unit Tests
         run: npm run test
       - name: Report Coverage
-        uses: coverallsapp/github-action@v1.1.0
+        uses: coverallsapp/github-action@v1.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
+          flag-name: Test on ${{ matrix.os }}
+
+  coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build-lint-test
+    steps:
+      - name: Let Coveralls know that all tests have finished
+        uses: coverallsapp/github-action@v1.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
 
   publish:
     name: Publish Github Action
