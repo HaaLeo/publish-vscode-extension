@@ -5,9 +5,13 @@
         "sourceMap": true,
         "strictPropertyInitialization": false,
         "noUnusedLocals": true,
-        "newLine": "LF"
+        "newLine": "LF",
+        "outDir": "./out",
+        "tsBuildInfoFile": "./out/.tsbuildinfo",
+        "incremental": true,
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "test/**/*"
     ]
 }

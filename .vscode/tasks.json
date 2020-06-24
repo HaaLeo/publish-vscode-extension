@@ -8,9 +8,15 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [],
+            "problemMatcher": ["$tsc"],
             "label": "npm: build",
-            "detail": "ncc build src/index.ts --source-map"
+        },
+        {
+            "type": "npm",
+            "script": "build:test",
+            "group": "build",
+            "problemMatcher": ["$tsc"],
+            "label": "npm: build:test",
         }
     ]
 }

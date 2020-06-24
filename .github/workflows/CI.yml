@@ -1,4 +1,4 @@
-name: Build, Lint and Deploy
+name: Build, Lint, Test and Deploy
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - published
 
 jobs:
-  build:
+  build-lint-test:
     name: Node ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -35,8 +35,10 @@ jobs:
         run: npm run lint
       - name: Build Code
         run: npm run build
-      # - name: Run tests
-      #   run: npm run coverage
+      - name: Run Unit Tests
+        run: npm run test
+      - name: Report Coverage
+        run: npm run coverage
 
   publish:
     name: Publish Github Action
