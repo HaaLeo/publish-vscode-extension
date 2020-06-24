@@ -38,7 +38,10 @@ jobs:
       - name: Run Unit Tests
         run: npm run test
       - name: Report Coverage
-        run: npm run coverage
+        uses: coverallsapp/github-action@v1.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
 
   publish:
     name: Publish Github Action
