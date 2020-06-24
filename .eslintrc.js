@@ -9,7 +9,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
-    "ignorePatterns": [ "node_modules/", "dist/", "out/", ".eslintrc.js"],
+    "ignorePatterns": ["node_modules/", "dist/", "out/", ".eslintrc.js"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": "tsconfig.json",
@@ -168,5 +168,14 @@ module.exports = {
         ],
         "use-isnan": "error",
         "valid-typeof": "off"
-    }
+    },
+    "overrides": [
+        {
+            "files": ["*.test.ts"],
+            "rules": {
+                "no-unused-expressions": "off",
+                "@typescript-eslint/no-unsafe-call": "off",
+            }
+        }
+    ]
 };

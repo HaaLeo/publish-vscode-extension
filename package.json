@@ -35,6 +35,7 @@
   "homepage": "https://github.com/HaaLeo/open-vsx-github-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
+    "@types/sinon-chai": "^3.2.4",
     "ovsx": "0.1.0-next.9b4e999",
     "vsce": "^1.77.0"
   },
@@ -42,6 +43,7 @@
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "@types/node": "^12.12.6",
+    "@types/sinon": "^9.0.4",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "@zeit/ncc": "^0.22.3",
@@ -52,6 +54,8 @@
     "eslint-plugin-prefer-arrow": "^1.2.1",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
     "typescript": "^3.9.5"
   }
 }

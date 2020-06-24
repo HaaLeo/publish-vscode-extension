@@ -37,8 +37,8 @@ jobs:
         run: npm run build
       - name: Run Unit Tests
         run: npm run test
-      # - name: Report Coverage
-      #   run: npm run coverage
+      - name: Report Coverage
+        run: npm run coverage
 
   publish:
     name: Publish Github Action
