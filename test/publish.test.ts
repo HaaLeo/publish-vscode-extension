@@ -4,6 +4,7 @@ import { expect, use } from 'chai';
 import { stub, SinonStub } from 'sinon';
 import * as sinonChai from 'sinon-chai';
 import * as vsce from 'vsce';
+import * as ovsx from 'ovsx';
 
 import { publish } from '../src/publish';
 
@@ -11,11 +12,18 @@ use(sinonChai);
 
 describe('publish', () => {
     let publishVSIXStub: SinonStub;
-    beforeEach(() => {
+    let publishOpenVSXStub: SinonStub;
+    before(() => {
         publishVSIXStub = stub(vsce, 'publishVSIX').resolves();
+        publishOpenVSXStub = stub(ovsx, 'publish').resolves();
     });
 
-    it('attempt to publish to Visual Studio Marketplace', async () => {
+    beforeEach(()=>{
+        publishOpenVSXStub.resetHistory();
+        publishVSIXStub.resetHistory();
+    });
+
+    it('should attempt to publish to Visual Studio Marketplace', async () => {
         await publish({
             registryUrl: 'https://marketplace.visualstudio.com',
             baseContentUrl: 'myBaseContentUrl',
@@ -25,12 +33,34 @@ describe('publish', () => {
             pat: 'myPersonalAccessToken',
             yarn: false
         });
-        const expectation: vsce.IPublishVSIXOptions = {
+
+        expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
             baseContentUrl: 'myBaseContentUrl',
             baseImagesUrl: 'myBaseImageUrl',
             pat: 'myPersonalAccessToken',
             useYarn: false
-        };
-        expect(publishVSIXStub).to.have.been.calledOnceWith('myExtensionFile', expectation);
+        });
+    });
+
+    it('should attempt to publish to Open VSX registry', async () => {
+        await publish({
+            registryUrl: 'https://open-vsx.org',
+            baseContentUrl: 'myBaseContentUrl',
+            baseImagesUrl: 'myBaseImageUrl',
+            extensionFile: 'myExtensionFile',
+            packagePath: 'myPackagePath',
+            pat: 'myPersonalAccessToken',
+            yarn: false
+        });
+
+        expect(publishOpenVSXStub).to.have.been.calledOnceWithExactly({
+            registryUrl: 'https://open-vsx.org',
+            baseContentUrl: 'myBaseContentUrl',
+            baseImagesUrl: 'myBaseImageUrl',
+            extensionFile: 'myExtensionFile',
+            packagePath: 'myPackagePath',
+            pat: 'myPersonalAccessToken',
+            yarn: false
+        });
     });
 });
