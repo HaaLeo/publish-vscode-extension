@@ -1,5 +1,6 @@
 'use strict';
 
+import * as path from 'path';
 import * as fs from 'fs';
 import { expect, use } from 'chai';
 import { stub, SinonStub } from 'sinon';
@@ -50,7 +51,7 @@ describe('createPackage', () => {
         });
 
         expect(readFileStub).to.have.been.calledOnce;
-        expect(result).to.be.equal('myPackagePath/testName-testVersion.vsix');
+        expect(result).to.be.equal(path.normalize('myPackagePath/testName-testVersion.vsix'));
         expect(createVSIXStub).to.have.been.calledOnceWithExactly({
             cwd: 'myPackagePath',
             baseContentUrl: 'myBaseContentUrl',
