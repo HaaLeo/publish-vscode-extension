@@ -9,7 +9,7 @@ GitHub action to publish your VS Code Extension to the [Open VSX Registry](https
 
 ## Usage
 
-To use the GitHub Action, you need to [reference the action](https://help.github.com/en/actions/automating-your-workflow-with-github-actions) in your workflow file.
+To use the GitHub Action, just [reference the action](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#referencing-actions-in-your-workflow) in your workflow file.
 
 ### Example
 
@@ -40,6 +40,23 @@ jobs:
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
+```
+
+To package the extension only once and publish the **identical** `.vsix` file to both registries one can use the following two steps instead:
+
+```yaml
+- name: Publish to Open VSX Registry
+  uses: HaaLeo/publish-vscode-extension@v0
+  id: publishToOpenVSX
+  with:
+    pat: ${{ secrets.OPEN_VSX_TOKEN }}
+- name: Publish to Visual Studio Marketplace
+  uses: HaaLeo/publish-vscode-extension@v0
+  with:
+    pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+    registryUrl: https://marketplace.visualstudio.com
+    extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+    packagePath: ''
 ```
 
 ### Open VSX Registry

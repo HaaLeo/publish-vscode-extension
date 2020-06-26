@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.1.2](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.2) 2020-06-26
+
+### Fixed
+* The outputs `vsixPath` is now set correctly.
+
+### Added 
+* Unit Tests
+* Code Coverage
+* Another usage example
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.1.1...v0.1.2)
+
 ## [v0.1.1](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.1) 2020-06-22
 
 ### Fixed
