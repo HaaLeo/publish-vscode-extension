@@ -15,11 +15,11 @@ async function main(): Promise<void> {
         throw new Error('Please specify either an extension file or a package path, but not both.');
     }
 
-    const vsixPath = await createPackage(ovsxOptions);
+    const vsixPath = await core.group('Package the Extension', () => createPackage(ovsxOptions));
     core.setOutput('vsixPath', vsixPath);
 
     ovsxOptions.extensionFile = vsixPath;
-    await publish(ovsxOptions);
+    await core.group('Publish the Extension', () => publish(ovsxOptions));
 }
 
 function _errorHandler(error: Error): void {
