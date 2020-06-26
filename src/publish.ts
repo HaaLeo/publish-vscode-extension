@@ -1,7 +1,8 @@
 'use strict';
 
-import { publish as ovsxPublish, PublishOptions as OVSXPublishOptions } from 'ovsx';
+import { publish as ovsxPublish } from 'ovsx';
 import { publishVSIX as vscePublishVSIX, IPublishVSIXOptions as VSCEPublishOptions } from 'vsce';
+import { OVSXPublishOptions } from './types';
 
 async function publish(ovsxOptions: OVSXPublishOptions): Promise<void> {
     if (ovsxOptions.registryUrl === 'https://marketplace.visualstudio.com') {

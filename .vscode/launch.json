@@ -13,7 +13,7 @@
                 "${workspaceFolder}/dist/*.js"
             ],
             "sourceMaps": true,
-            "preLaunchTask": "npm: build",
+            "preLaunchTask": "npm: build:ncc",
             "env": {
                 "INPUT_PAT": "test-pat",
                 "INPUT_REGISTRYURL": "https://marketplace.visualstudio.com",
@@ -22,7 +22,8 @@
                 "INPUT_YARN": "false",
                 "INPUT_EXTENSIONFILE": "",
                 "INPUT_BASECONTENTURL": "",
-                "INPUT_BASEIMAGESURL": ""
+                "INPUT_BASEIMAGESURL": "",
+                "INPUT_DRYRUN": "true"
             },
             "outputCapture": "std"
         },

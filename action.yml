@@ -34,6 +34,10 @@ inputs:
     description: Use yarn instead of npm while packing extension files.
     required: false
     default: false
+  dryRun:
+    description: 'Set this option to "true" to package your extension but do not publish it.'
+    required: false
+    default: false
 
 outputs:
   vsixPath:

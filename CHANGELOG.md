@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.3) 2020-06-26
+
+### Added
+* `dryRun` option to only package the extension but not publish it.
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.1.3...v0.2.0)
+
 ## [v0.1.3](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.3) 2020-06-26
 
 ### Fixed
