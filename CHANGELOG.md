@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.1.3](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.3) 2020-06-26
+
+### Fixed
+* Now the `dist/index.js` contains the actual fixes of release `v0.1.2`.
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.1.2...v0.1.3)
+
 ## [v0.1.2](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.1.2) 2020-06-26
 
 ### Fixed
