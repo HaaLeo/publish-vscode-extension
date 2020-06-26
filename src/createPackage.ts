@@ -5,8 +5,8 @@ import * as path from 'path';
 
 import * as core from '@actions/core';
 
-import { PublishOptions as OVSXPublishOptions } from 'ovsx';
 import { createVSIX, ICreateVSIXOptions } from 'vsce';
+import { OVSXPublishOptions } from './types';
 
 async function createPackage(ovsxOptions: OVSXPublishOptions): Promise<string> {
     let vsixPath: string;
@@ -17,10 +17,10 @@ async function createPackage(ovsxOptions: OVSXPublishOptions): Promise<string> {
     }
     else {
         const packageName = await _getPackageName(ovsxOptions.packagePath);
-        const options = _convertToVSCECreateVSIXOptions(ovsxOptions, packageName);
+        vsixPath = path.join(ovsxOptions.packagePath, packageName);
+        const options = _convertToVSCECreateVSIXOptions(ovsxOptions, vsixPath);
         core.info('Start packaging the extension.');
         await createVSIX(options);
-        vsixPath = path.join(ovsxOptions.packagePath, packageName);
     }
 
     return vsixPath;

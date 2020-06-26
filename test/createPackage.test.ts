@@ -57,7 +57,7 @@ describe('createPackage', () => {
             baseContentUrl: 'myBaseContentUrl',
             baseImagesUrl: 'myBaseImageUrl',
             useYarn: false,
-            packagePath: 'testName-testVersion.vsix'
+            packagePath: path.normalize('myPackagePath/testName-testVersion.vsix')
         });
     });
 
