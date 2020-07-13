@@ -9,6 +9,7 @@
         "outDir": "./out",
         "tsBuildInfoFile": "./out/.tsbuildinfo",
         "incremental": true,
+        "resolveJsonModule": true
     },
     "include": [
         "src/**/*",

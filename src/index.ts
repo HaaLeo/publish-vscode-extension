@@ -1,13 +1,18 @@
 'use strict';
 
 import * as core from '@actions/core';
+
+import * as packageJSON from '../package.json';
 import { createPackage } from './createPackage';
 import { publish } from './publish';
-import { ActionOptions } from './types';
+import { ActionOptions , PackageJSON} from './types';
 
 async function main(): Promise<void> {
     process.on('uncaughtException', _errorHandler);
     process.on('unhandledRejection', _errorHandler);
+
+    const actionInfo = packageJSON as PackageJSON;
+    core.info(`Start GitHub Action ${typeof actionInfo.author === 'string'? actionInfo.author : actionInfo.author.name}/${actionInfo.name}@v${actionInfo.version}`);
 
     const options = _getInputs();
     core.debug(`Start action with options="${JSON.stringify(options)}"`);
