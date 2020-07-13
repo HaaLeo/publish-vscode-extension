@@ -12,10 +12,10 @@ async function main(): Promise<void> {
     process.on('unhandledRejection', _errorHandler);
 
     const actionInfo = packageJSON as PackageJSON;
-    core.info(`Start GitHub Action ${typeof actionInfo.author === 'string' ? actionInfo.author : actionInfo.author.name}/${actionInfo.name}@v${actionInfo.version}`);
+    core.info(`Start GitHub Action ${typeof actionInfo.author === 'string' ? actionInfo.author : actionInfo.author.name}/${actionInfo.name}@v${actionInfo.version}.`);
 
     const options = _getInputs();
-    core.debug(`Start action with options="${JSON.stringify(options)}"`);
+    core.debug(`Start action with options="${JSON.stringify(options)}".`);
     if ((!options.packagePath && !options.extensionFile) || (options.packagePath && options.extensionFile)) {
         throw new Error('Please specify either an extension file or a package path, but not both.');
     }
