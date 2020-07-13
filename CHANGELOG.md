@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.1](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.2.1) 2020-07-14
+
 ### Added
-* logging of the action's specific version for better debugging. 
+* Logging of the action's specific version for better debugging. 
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.2.0...v0.2.1)
 
 ## [v0.2.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.2.0) 2020-06-26
 
