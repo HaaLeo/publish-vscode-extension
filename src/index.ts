@@ -12,7 +12,7 @@ async function main(): Promise<void> {
     process.on('unhandledRejection', _errorHandler);
 
     const actionInfo = packageJSON as PackageJSON;
-    core.info(`Start GitHub Action ${typeof actionInfo.author === 'string' ? actionInfo.author : actionInfo.author.name}/${actionInfo.name}@v${actionInfo.version}.`);
+    core.info(`Specifically, running GitHub Action ${typeof actionInfo.author === 'string' ? actionInfo.author : actionInfo.author.name}/${actionInfo.name}@v${actionInfo.version}.`);
 
     const options = _getInputs();
     core.debug(`Start action with options="${JSON.stringify(options)}".`);
