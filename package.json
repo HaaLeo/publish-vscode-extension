@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/HaaLeo/open-vsx-github-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "ovsx": "0.1.0-next.dacd2fd",
     "vsce": "^1.77.0"
   },
