@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.4](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.2.4) 2020-10-02
+
+### Security
+* Fixed `@actions/core` vulnerability.
+* Updated dependencies
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.2.3...v0.2.4)
+
 ## [v0.2.3](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.2.3) 2020-07-20
 
 ### Security
