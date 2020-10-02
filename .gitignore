@@ -85,7 +85,7 @@ out
 .nuxt
 dist/*
 !dist/index.js
-!dist/\[Content_Types\].xml
+!dist/\[Content_Types*
 !dist/*.vsixmanifest
 
 # Gatsby files
