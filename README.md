@@ -62,7 +62,13 @@ To package the extension only once and publish the **identical** `.vsix` file to
 ### Open VSX Registry
 
 To publish to the Open VSX Registry ensure that your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) was created **beforehand**.
-By default, the only thing you need to do is to set the `pat` parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token). 
+You need to set the `pat` parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token).
+Further, you should ensure that you only publish an extension which is licensed.
+For more information regarding Open VSX' timeline and its extensions' licensing check out [Brian King's blog](https://blogs.eclipse.org/post/brian-king/open-vsx-registry-under-new-management) (section "Licensing" and "Timeline").
+
+Currently, this GitHub action allows you to publish extensions which do not state their license terms.
+However, this behavior is deprecated and a future release of this action will reject unlicensed extensions.
+Therefore, I heavily encourage you to publish an extension with a (permissive) license such as the [MIT license](https://choosealicense.com/licenses/mit/).
 
 ### Visual Studio Marketplace
 
