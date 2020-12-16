@@ -6,7 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.3.0...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.3.1...master)
+
+## [v0.3.1](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.3.1) 2020-12-16
+
+## Fixed
+* a bug that caused to log the wrong version of the action
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.3.0...v0.3.1)
 
 ## [v0.3.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.3.0) 2020-12-16
 
