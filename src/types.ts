@@ -28,7 +28,7 @@ export interface ActionOptions {
      * Should use `yarn` instead of `npm`. Only valid with `packagePath`.
      */
     yarn?: boolean;
-    dryRun: boolean;
+    dryRun?: boolean;
     noVerify?: boolean;
 }
 

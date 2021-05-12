@@ -6,9 +6,9 @@ import * as path from 'path';
 import * as core from '@actions/core';
 
 import { createVSIX, ICreateVSIXOptions } from 'vsce';
-import { OVSXPublishOptions } from './types';
+import { ActionOptions } from './types';
 
-async function createPackage(ovsxOptions: OVSXPublishOptions): Promise<string> {
+async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
     let vsixPath: string;
 
     if (ovsxOptions.extensionFile) {
@@ -26,7 +26,7 @@ async function createPackage(ovsxOptions: OVSXPublishOptions): Promise<string> {
     return vsixPath;
 }
 
-function _convertToVSCECreateVSIXOptions(options: OVSXPublishOptions, targetVSIXPath: string): ICreateVSIXOptions {
+function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath: string): ICreateVSIXOptions {
     // Shallow copy of options
     const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd } = { ...options };
     const result = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath };
