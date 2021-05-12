@@ -38,6 +38,10 @@ inputs:
     description: 'Set this option to "true" to package your extension but do not publish it.'
     required: false
     default: false
+  noVerify:
+    description: 'Allow Extensions using proposed Api (enableProposedApi: true) publish to the Marketplace.'
+    required: false
+    default: false
 
 outputs:
   vsixPath:
