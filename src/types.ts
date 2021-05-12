@@ -29,6 +29,10 @@ export interface ActionOptions {
      */
     yarn?: boolean;
     dryRun?: boolean;
+
+    /**
+     * Use this flag to enable publishing extensions which use a proposed extension API.
+     */
     noVerify?: boolean;
 }
 

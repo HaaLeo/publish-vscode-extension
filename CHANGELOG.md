@@ -6,7 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.3.1...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.0...master)
+
+## [v0.4.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.4.0) 2021-05-12
+
+## Added
+* support for vsce's `--noVerify` option to enable publishing of extensions to the visual studio marketplace which use a proposed API [#8](https://github.com/HaaLeo/publish-vscode-extension/issues/8). Implemented by [@AnWeber](https://github.com/AnWeber).
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.3.1...v0.4.0)
 
 ## [v0.3.1](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.3.1) 2020-12-16
 

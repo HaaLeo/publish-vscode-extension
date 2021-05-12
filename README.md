@@ -89,8 +89,8 @@ You can set any or all of the following input parameters:
 |`baseContentUrl` |string |no | - | Prepend all relative links in README.md with this URL.
 |`baseImagesUrl` |string |no | - | Prepend all relative image links in README.md with this URL.
 |`yarn` |boolean |no | `false` | Use yarn instead of npm while packing extension files.
-|`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it.
-
+|`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. When using this option set the `pat` option to a stub value.
+|`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
 ## Outputs
 
 The action exposes the following outputs:

@@ -39,7 +39,7 @@ inputs:
     required: false
     default: false
   noVerify:
-    description: 'Allow Extensions using proposed Api (enableProposedApi: true) publish to the Marketplace.'
+    description: 'Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true).'
     required: false
     default: false
 
