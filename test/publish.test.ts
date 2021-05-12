@@ -31,14 +31,16 @@ describe('publish', () => {
             extensionFile: 'myExtensionFile',
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
-            yarn: false
+            yarn: false,
+            noVerify: true,
         });
 
         expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
             baseContentUrl: 'myBaseContentUrl',
             baseImagesUrl: 'myBaseImageUrl',
             pat: 'myPersonalAccessToken',
-            useYarn: false
+            useYarn: false,
+            noVerify: true,
         });
     });
 
