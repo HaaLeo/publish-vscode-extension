@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HaaLeo/open-vsx-github-action.git"
+    "url": "git+https://github.com/HaaLeo/publish-vscode-extension.git"
   },
   "keywords": [
     "github",
@@ -30,33 +30,33 @@
   },
   "license": "SEE LICENSE IN LICENSE.txt",
   "bugs": {
-    "url": "https://github.com/HaaLeo/open-vsx-github-action/issues"
+    "url": "https://github.com/HaaLeo/publish-vscode-extension/issues"
   },
-  "homepage": "https://github.com/HaaLeo/open-vsx-github-action#readme",
+  "homepage": "https://github.com/HaaLeo/publish-vscode-extension#readme",
   "dependencies": {
-    "@actions/core": "^1.2.7",
-    "ovsx": "^0.1.0",
-    "vsce": "^1.88.0"
+    "@actions/core": "^1.4.0",
+    "ovsx": "^0.2.0",
+    "vsce": "^1.94.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.18",
+    "@types/chai": "^4.2.19",
     "@types/chai-as-promised": "^7.1.4",
     "@types/mocha": "^8.2.2",
-    "@types/node": "^12.20.13",
-    "@types/sinon": "^10.0.0",
+    "@types/node": "^12.20.15",
+    "@types/sinon": "^10.0.2",
     "@types/sinon-chai": "^3.2.5",
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
-    "@zeit/ncc": "^0.22.3",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "@vercel/ncc": "^0.28.6",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.29.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
     "sinon": "^10.0.0",
-    "sinon-chai": "^3.6.0",
-    "typescript": "^4.2.4"
+    "sinon-chai": "^3.7.0",
+    "typescript": "^4.3.4"
   }
 }

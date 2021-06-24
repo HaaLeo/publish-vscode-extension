@@ -9,7 +9,8 @@
         "outDir": "./out",
         "tsBuildInfoFile": "./out/.tsbuildinfo",
         "incremental": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "moduleResolution": "node"
     },
     "include": [
         "src/**/*",
