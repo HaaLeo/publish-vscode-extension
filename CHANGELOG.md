@@ -6,7 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.1...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.2...master)
+
+## [v0.4.2](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.4.2) 2021-06-26
+
+### Fixed
+* Issue [#13](https://github.com/HaaLeo/publish-vscode-extension/issues/13). Update vsce to v1.95.0 to fix [microsoft/vscode-vsce#576](https://github.com/microsoft/vscode-vsce/issues/576).
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.1...v0.4.2)
 
 ## [v0.4.1](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.4.1) 2021-06-24
 
