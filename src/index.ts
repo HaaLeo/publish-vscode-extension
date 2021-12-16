@@ -55,6 +55,7 @@ function _getInputs(): ActionOptions {
         baseContentUrl: core.getInput('baseContentUrl') || undefined,
         baseImagesUrl: core.getInput('baseImageUrl') || undefined,
         noVerify: core.getInput('noVerify') === 'true',
+        preRelease: core.getInput('preRelease') === 'true',
     };
 }
 

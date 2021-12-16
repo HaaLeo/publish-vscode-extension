@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+* Adds `--pre-release` functionality for `vsce` Issue [#16](https://github.com/HaaLeo/publish-vscode-extension/issues/16).
+
 [All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.2...master)
 
 ## [v0.4.2](https://github.com/HaaLeo/publish-vscode-extension/tree/v0.4.2) 2021-06-26

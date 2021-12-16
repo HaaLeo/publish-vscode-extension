@@ -18,7 +18,7 @@ describe('publish', () => {
         publishOpenVSXStub = stub(ovsx, 'publish').resolves();
     });
 
-    beforeEach(()=>{
+    beforeEach(() => {
         publishOpenVSXStub.resetHistory();
         publishVSIXStub.resetHistory();
     });
@@ -33,6 +33,7 @@ describe('publish', () => {
             pat: 'myPersonalAccessToken',
             yarn: false,
             noVerify: true,
+            preRelease: true,
         });
 
         expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
@@ -41,6 +42,7 @@ describe('publish', () => {
             pat: 'myPersonalAccessToken',
             useYarn: false,
             noVerify: true,
+            preRelease: true,
         });
     });
 
@@ -65,4 +67,20 @@ describe('publish', () => {
             yarn: false
         });
     });
+
+    it('failed attempt to publish preRelease to Open VSX registry', async () =>
+        publish({
+            registryUrl: 'https://open-vsx.org',
+            baseContentUrl: 'myBaseContentUrl',
+            baseImagesUrl: 'myBaseImageUrl',
+            extensionFile: 'myExtensionFile',
+            packagePath: 'myPackagePath',
+            pat: 'myPersonalAccessToken',
+            yarn: true,
+            preRelease: true,
+        }).catch(error =>
+            expect(error)
+                .to.be.an('error')
+                .with.property('message', 'Open VSX does not support option preRelease')
+        ));
 });
