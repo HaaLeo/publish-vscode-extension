@@ -42,6 +42,10 @@ inputs:
     description: 'Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true).'
     required: false
     default: false
+  preRelease:
+    description: 'Publish a version marked as a Pre-Release.'
+    required: false
+    default: false
 
 outputs:
   vsixPath:
