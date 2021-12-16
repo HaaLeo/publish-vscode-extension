@@ -37,6 +37,9 @@ It would be a shame to reject a PR with your awesome work just because somebody 
 First you need to fork the repo, clone it and install all dependencies.
 
 ```zsh
+# Use node v16
+nvm install 16
+
 # Clone the repository
 git clone git@github.com:yourUserName/publish-vscode-extension.git
 cd publish-vscode-extension
