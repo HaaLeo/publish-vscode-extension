@@ -29,14 +29,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - run: npm ci
       - name: Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v0
+        uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
       - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v0
+        uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
@@ -46,12 +46,12 @@ To package the extension only once and publish the **identical** `.vsix` file to
 
 ```yaml
 - name: Publish to Open VSX Registry
-  uses: HaaLeo/publish-vscode-extension@v0
+  uses: HaaLeo/publish-vscode-extension@v1
   id: publishToOpenVSX
   with:
     pat: ${{ secrets.OPEN_VSX_TOKEN }}
 - name: Publish to Visual Studio Marketplace
-  uses: HaaLeo/publish-vscode-extension@v0
+  uses: HaaLeo/publish-vscode-extension@v1
   with:
     pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
     registryUrl: https://marketplace.visualstudio.com
@@ -91,6 +91,8 @@ You can set any or all of the following input parameters:
 |`yarn` |boolean |no | `false` | Use yarn instead of npm while packing extension files.
 |`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. When using this option set the `pat` option to a stub value.
 |`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
+|`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Currently only supported for the visual studio marketplace.
+
 ## Outputs
 
 The action exposes the following outputs:
