@@ -58,7 +58,6 @@ To package the extension only once and publish the **identical** `.vsix` file to
     pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
     registryUrl: https://marketplace.visualstudio.com
     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
-    packagePath: ''
 ```
 
 ### Open VSX Registry
@@ -85,15 +84,15 @@ You can set any or all of the following input parameters:
 |Name |Type |Required? |Default |Description
 |-|-|-|-|-
 |`pat` |string  |yes |-|The personal access token to the corresponding registry.
-|`extensionFile` |string  |no | - |Path to the vsix file to be published. Cannot be used together with packagePath.
+|`extensionFile` |string  |no | - |Path to the vsix file to be published. This option will be preferred when set together with `packagePath`.
 |`registryUrl` |string  |no |`https://open-vsx.org` |Use the registry API at this base URL
-|`packagePath` |string |no | `./` |Path to the extension to be packaged and published. Cannot be used together with extensionFile.
+|`packagePath` |string |no | `./` |Path to the extension to be packaged and published. When `extensionFile` is set too `packagePath` is ignored.
 |`baseContentUrl` |string |no | - | Prepend all relative links in README.md with this URL.
 |`baseImagesUrl` |string |no | - | Prepend all relative image links in README.md with this URL.
 |`yarn` |boolean |no | `false` | Use yarn instead of npm while packing extension files.
 |`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. When using this option set the `pat` option to a stub value.
 |`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
-|`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Currently only supported for the visual studio marketplace.
+|`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Currently only supported for the visual studio marketplace. Is only considered when packaging an extension.
 
 ## Outputs
 

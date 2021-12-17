@@ -15,12 +15,14 @@ async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
         vsixPath = ovsxOptions.extensionFile;
         core.info('The extension was already packaged. Skip packaging.');
     }
-    else {
+    else if (ovsxOptions.packagePath) {
         const packageName = await _getPackageName(ovsxOptions.packagePath);
         vsixPath = path.join(ovsxOptions.packagePath, packageName);
         const options = _convertToVSCECreateVSIXOptions(ovsxOptions, vsixPath);
         core.info('Start packaging the extension.');
         await createVSIX(options);
+    } else {
+        throw new Error('Either option "packagePath" or "extensionFile" must be set.');
     }
 
     return vsixPath;
@@ -28,8 +30,8 @@ async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
 
 function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath: string): ICreateVSIXOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd } = { ...options };
-    const result = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath };
+    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd , preRelease} = { ...options };
+    const result = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease };
     return result;
 }
 

@@ -36,7 +36,7 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "ovsx": "^0.2.1",
-    "vsce": "^2.5.1"
+    "vsce": "^2.5.2"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",

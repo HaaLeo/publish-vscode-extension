@@ -8,10 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.0.0...master)
 
-## [v1.0.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v1.0.0)
+## [v1.0.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v1.0.0) 2021-12-17
+
+### BREAKING CHANGES
+
+* Now requires minimum NodeJs version v16
+* Options `packagePath` and `extensionFile` are no longer mutually exclusive. If both options are set `extensionFile` is preferred and the extension won't be packaged.
 
 ### Added
 * Adds `--pre-release` functionality for `vsce`. Issue [#16](https://github.com/HaaLeo/publish-vscode-extension/issues/16). Contributed by [@gnikit](https://github.com/gnikit).
+
+### Security
+* Updated dependencies
 
 [All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v0.4.2...v1.0.0)
 

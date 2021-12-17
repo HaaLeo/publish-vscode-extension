@@ -16,9 +16,6 @@ export async function main(): Promise<void> {
 
     const options = _getInputs();
     core.debug(`Start action with options="${JSON.stringify(options)}".`);
-    if ((!options.packagePath && !options.extensionFile) || (options.packagePath && options.extensionFile)) {
-        throw new Error('Please specify either an extension file or a package path, but not both.');
-    }
 
     const vsixPath = await core.group('Package the Extension', () => createPackage(options));
     core.setOutput('vsixPath', vsixPath);
