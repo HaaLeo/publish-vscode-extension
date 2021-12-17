@@ -32,8 +32,7 @@ describe('publish', () => {
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
             yarn: false,
-            noVerify: true,
-            preRelease: true,
+            noVerify: true
         });
 
         expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
@@ -41,8 +40,7 @@ describe('publish', () => {
             baseImagesUrl: 'myBaseImageUrl',
             pat: 'myPersonalAccessToken',
             useYarn: false,
-            noVerify: true,
-            preRelease: true,
+            noVerify: true
         });
     });
 
@@ -76,8 +74,7 @@ describe('publish', () => {
             extensionFile: 'myExtensionFile',
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
-            yarn: true,
-            preRelease: true,
+            yarn: true
         }).catch(error =>
             expect(error)
                 .to.be.an('error')

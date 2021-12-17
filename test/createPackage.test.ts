@@ -47,7 +47,8 @@ describe('createPackage', () => {
             extensionFile: undefined,
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
-            yarn: false
+            yarn: false,
+            preRelease: true
         });
 
         expect(readFileStub).to.have.been.calledOnce;
@@ -57,7 +58,8 @@ describe('createPackage', () => {
             baseContentUrl: 'myBaseContentUrl',
             baseImagesUrl: 'myBaseImageUrl',
             useYarn: false,
-            packagePath: path.normalize('myPackagePath/testName-testVersion.vsix')
+            packagePath: path.normalize('myPackagePath/testName-testVersion.vsix'),
+            preRelease: true
         });
     });
 
