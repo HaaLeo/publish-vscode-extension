@@ -60,7 +60,7 @@ To package the extension only once and publish the **identical** `.vsix` file to
     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 ```
 
-For a more complete and complex example one can checkout one can check out the workflow of the [`HaaLeo/vscode-timing`](https://github.com/HaaLeo/vscode-timing/blob/master/.github/workflows/cicd.yml#L1) extension.
+For a more complete and complex example one can check out the workflow of [`HaaLeo/vscode-timing`](https://github.com/HaaLeo/vscode-timing/blob/master/.github/workflows/cicd.yml#L1).
 
 ### Open VSX Registry
 
