@@ -60,6 +60,8 @@ To package the extension only once and publish the **identical** `.vsix` file to
     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 ```
 
+For a more complete and complex example one can checkout one can check out the workflow of the [`HaaLeo/vscode-timing`](https://github.com/HaaLeo/vscode-timing/blob/master/.github/workflows/cicd.yml#L1) extension.
+
 ### Open VSX Registry
 
 To publish to the Open VSX Registry ensure that your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) was created **beforehand**.
