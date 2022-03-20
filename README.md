@@ -108,6 +108,7 @@ The action exposes the following outputs:
 
 If you found a bug or are missing a feature do not hesitate to [file an issue](https://github.com/HaaLeo/publish-vscode-extension/issues/new/choose).  
 Pull Requests are welcome!
+To get started submitting code changes please take a look at the [CONTRIBUTING.md](./CONTRIBUTING.md) file first.
 
 ## Support
 

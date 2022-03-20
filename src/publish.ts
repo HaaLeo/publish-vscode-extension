@@ -1,6 +1,6 @@
 'use strict';
 
-import { publish as ovsxPublish } from 'ovsx';
+import { publish as ovsxPublish, PublishOptions } from 'ovsx';
 import { publishVSIX as vscePublishVSIX, IPublishVSIXOptions as VSCEPublishOptions } from 'vsce';
 import { ActionOptions } from './types';
 
@@ -9,7 +9,8 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
         const vsceOptions = _convertToVSCEPublishOptions(ovsxOptions);
         await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);
     } else {
-        await ovsxPublish(ovsxOptions);
+        const options: PublishOptions = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
+        await ovsxPublish(options);
     }
 }
 

@@ -60,7 +60,7 @@ describe('publish', () => {
             baseContentUrl: 'myBaseContentUrl',
             baseImagesUrl: 'myBaseImageUrl',
             extensionFile: 'myExtensionFile',
-            packagePath: 'myPackagePath',
+            packagePath: ['myPackagePath'],
             pat: 'myPersonalAccessToken',
             yarn: false
         });
