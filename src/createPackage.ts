@@ -5,7 +5,7 @@ import * as path from 'path';
 
 import * as core from '@actions/core';
 
-import { createVSIX, ICreateVSIXOptions } from 'vsce';
+import { createVSIX, IPackageOptions } from 'vsce';
 import { ActionOptions } from './types';
 
 async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
@@ -18,6 +18,7 @@ async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
     else if (ovsxOptions.packagePath) {
         const packageName = await _getPackageName(ovsxOptions.packagePath);
         vsixPath = path.join(ovsxOptions.packagePath, packageName);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const options = _convertToVSCECreateVSIXOptions(ovsxOptions, vsixPath);
         core.info('Start packaging the extension.');
         await createVSIX(options);
@@ -28,10 +29,10 @@ async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
     return vsixPath;
 }
 
-function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath: string): ICreateVSIXOptions {
+function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath: string): IPackageOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd , preRelease} = { ...options };
-    const result = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease };
+    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd, preRelease } = { ...options };
+    const result: IPackageOptions = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease };
     return result;
 }
 
