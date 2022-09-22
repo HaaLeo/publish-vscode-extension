@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/HaaLeo/publish-vscode-extension#readme",
   "dependencies": {
-    "@actions/core": "^1.9.0",
+    "@actions/core": "^1.9.1",
     "ovsx": "^0.5.1",
     "vsce": "^2.10.0"
   },
