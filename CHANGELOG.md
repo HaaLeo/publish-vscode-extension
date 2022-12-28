@@ -6,7 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.1.0...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.2.0...master)
+
+## [v1.2.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v1.2.0) 2022-12-28
+
+### Security
+* Updated dependencies to 
+    * `@vscode/vsce@2.16.0` ([#30](https://github.com/HaaLeo/publish-vscode-extension/issues/30))
+    * `ovsx@0.7.1`
+
+### Fixed
+* Shields io badge ([#31](https://github.com/HaaLeo/publish-vscode-extension/issues/31))
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.1.0...v1.2.0)
 
 ## [v1.1.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v1.1.0) 2022-10-31
 
