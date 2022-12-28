@@ -3,7 +3,7 @@
 import { expect, use } from 'chai';
 import { stub, SinonStub } from 'sinon';
 import * as sinonChai from 'sinon-chai';
-import * as vsce from 'vsce';
+import * as vsce from '@vscode/vsce';
 import * as ovsx from 'ovsx';
 
 import { publish } from '../src/publish';

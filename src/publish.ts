@@ -1,7 +1,7 @@
 'use strict';
 
 import { publish as ovsxPublish, PublishOptions } from 'ovsx';
-import { publishVSIX as vscePublishVSIX, IPublishVSIXOptions as VSCEPublishOptions } from 'vsce';
+import { publishVSIX as vscePublishVSIX, IPublishVSIXOptions as VSCEPublishOptions } from '@vscode/vsce';
 import { ActionOptions } from './types';
 
 async function publish(ovsxOptions: ActionOptions): Promise<void> {

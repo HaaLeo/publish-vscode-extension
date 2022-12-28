@@ -6,7 +6,7 @@ import { expect, use } from 'chai';
 import { stub, SinonStub } from 'sinon';
 import * as chaiAsPromise from 'chai-as-promised';
 import * as sinonChai from 'sinon-chai';
-import * as vsce from 'vsce';
+import * as vsce from '@vscode/vsce';
 import { createPackage } from '../src/createPackage';
 use(sinonChai);
 use(chaiAsPromise);

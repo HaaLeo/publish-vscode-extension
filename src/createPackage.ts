@@ -5,7 +5,7 @@ import * as path from 'path';
 
 import * as core from '@actions/core';
 
-import { createVSIX, IPackageOptions } from 'vsce';
+import { createVSIX, IPackageOptions } from '@vscode/vsce';
 import { ActionOptions } from './types';
 
 async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
