@@ -32,7 +32,8 @@ describe('publish', () => {
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
             yarn: false,
-            noVerify: true
+            noVerify: true,
+            dependencies: true,
         });
 
         expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
@@ -40,7 +41,8 @@ describe('publish', () => {
             baseImagesUrl: 'myBaseImageUrl',
             pat: 'myPersonalAccessToken',
             useYarn: false,
-            noVerify: true
+            noVerify: true,
+            dependencies: true,
         });
     });
 

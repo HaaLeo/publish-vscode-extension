@@ -31,8 +31,8 @@ async function createPackage(ovsxOptions: ActionOptions): Promise<string> {
 
 function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath: string): IPackageOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd, preRelease } = { ...options };
-    const result: IPackageOptions = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease };
+    const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd, preRelease, dependencies } = { ...options };
+    const result: IPackageOptions = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease, dependencies };
     return result;
 }
 
