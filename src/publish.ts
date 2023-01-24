@@ -17,7 +17,7 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
 
 function _convertToVSCEPublishOptions(options: ActionOptions): VSCEPublishOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, pat, yarn: useYarn, noVerify, dependencies } = { ...options };    
+    const { baseContentUrl, baseImagesUrl, pat, yarn: useYarn, noVerify, dependencies } = { ...options };
     const result = {
         baseContentUrl,
         useYarn,
