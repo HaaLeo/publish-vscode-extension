@@ -53,5 +53,6 @@ function _getInputs(): ActionOptions {
         baseImagesUrl: core.getInput('baseImageUrl') || undefined,
         noVerify: core.getInput('noVerify') === 'true',
         preRelease: core.getInput('preRelease') === 'true',
+        dependencies: core.getInput('dependencies') !== 'false',
     };
 }

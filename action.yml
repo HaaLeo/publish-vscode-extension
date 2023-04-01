@@ -46,6 +46,10 @@ inputs:
     description: 'Publish a version marked as a Pre-Release.'
     required: false
     default: false
+  dependencies:
+    description: 'Check that dependencies defined in package.json exist in node_modules. Set to false if using yarn v2+ with pnp.'
+    required: false
+    default: true    
 
 outputs:
   vsixPath:

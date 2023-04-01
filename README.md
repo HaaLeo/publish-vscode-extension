@@ -94,6 +94,7 @@ You can set any or all of the following input parameters:
 |`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. When using this option set the `pat` option to a stub value.
 |`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
 |`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Currently only supported for the visual studio marketplace. Is only considered when packaging an extension.
+|`dependencies` |boolean| no |`true` | Check that dependencies defined in `package.json` exist in `node_modules`. Set to `false` if using yarn berry with PnP.
 
 ## Outputs
 
