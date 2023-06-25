@@ -12,7 +12,7 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
     } else {
         const options: PublishOptions = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
         const results = await ovsxPublish(options);
-        results.forEach(result => {
+        results?.forEach(result => {
             if (result.status === 'rejected') {
                 throw result.reason;
             }
