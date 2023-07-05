@@ -51,7 +51,7 @@ inputs:
     required: false
     default: true
   skipDuplicate:
-    description: 'Don\'t throw an error when the package version is already present in the registry'
+    description: 'Fail silently if version already exists on the marketplace'
     required: false
     default: false
 

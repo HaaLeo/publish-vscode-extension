@@ -95,6 +95,7 @@ You can set any or all of the following input parameters:
 |`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
 |`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Is only considered when packaging an extension.
 |`dependencies` |boolean| no |`true` | Check that dependencies defined in `package.json` exist in `node_modules`. Set to `false` if using pnpm or yarn v2+ with PnP.
+|`skipDuplicate` |boolean| no |`false` | Fail silently if version already exists on the marketplace. Equivalent to the `--skip-duplicate` option of the vsce CLI.
 
 ## Outputs
 

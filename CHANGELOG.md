@@ -6,7 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.3.0...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.4.0...master)
+
+## [1.4.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.4.0) 2023-07-05
+
+### Security
+* Updated dependencies to 
+    * `@vscode/vsce@2.19.0`
+    * `ovsx@0.8.2`
+
+### Added
+* Adds `--skip-duplicate` functionality for `vsce`. Issue [#38](https://github.com/HaaLeo/publish-vscode-extension/issues/38).
+
+### Fixed
+* A bug that swallowed publish errors silently. Contributed by [@VladBrok](https://github.com/VladBrok).
+
+### Changed
+* Clarified the usage of the `dependencies` option [#35](https://github.com/HaaLeo/publish-vscode-extension/issues/35). Contributed by [@Antyos](https://github.com/Antyos)
+* Updated the Readme to state that the Open VSX registry also supports the `preRelease` flag [#42](https://github.com/HaaLeo/publish-vscode-extension/issues/42).
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.3.0...v1.4.0)
 
 ## [v1.3.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v1.3.0) 2023-04-01
 
