@@ -11,7 +11,12 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
         await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);
     } else {
         const options: PublishOptions = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
-        await ovsxPublish(options);
+        const results = await ovsxPublish(options);
+        results?.forEach(result => {
+            if (result.status === 'rejected') {
+                throw result.reason;
+            }
+        });
     }
 }
 
