@@ -40,7 +40,7 @@ export interface ActionOptions {
     /**
      * This is the inverse of the `--no-dependencies` flag in vsce. When false, vsce will
      * not check for the existence of dependencies defined in package.json in node_modules.
-     * Set this to false if using yarn v2+ with PnP enabled.
+     * Set this to false if using pnpm or yarn v2+ with PnP enabled.
      */
     dependencies?: boolean;
 }
