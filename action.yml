@@ -50,6 +50,10 @@ inputs:
     description: 'Check that dependencies defined in package.json exist in node_modules. Set to false if using pnpm or yarn v2+ with pnp.'
     required: false
     default: true
+  skipDuplicate:
+    description: 'Don\'t throw an error when the package version is already present in the registry'
+    required: false
+    default: false
 
 outputs:
   vsixPath:

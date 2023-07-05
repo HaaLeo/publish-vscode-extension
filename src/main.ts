@@ -54,5 +54,6 @@ function _getInputs(): ActionOptions {
         noVerify: core.getInput('noVerify') === 'true',
         preRelease: core.getInput('preRelease') === 'true',
         dependencies: core.getInput('dependencies') === 'true',
+        skipDuplicate: core.getInput('skipDuplicate') === 'true',
     };
 }

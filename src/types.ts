@@ -43,6 +43,11 @@ export interface ActionOptions {
      * Set this to false if using pnpm or yarn v2+ with PnP enabled.
      */
     dependencies?: boolean;
+
+    /**
+     * Don't throw an error when the package version is already present in the registry
+     */
+    skipDuplicate?: boolean;
 }
 
 export interface PackageJSON {
