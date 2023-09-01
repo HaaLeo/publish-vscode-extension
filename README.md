@@ -20,7 +20,7 @@ The following example shows a workflow that publishes an extension to the Open V
 on:
   push:
     tags:
-      - "*"
+      - '*'
 
 name: Deploy Extension
 jobs:
