@@ -48,6 +48,8 @@ export interface ActionOptions {
      * Don't throw an error when the package version is already present in the registry
      */
     skipDuplicate?: boolean;
+
+    target?: string;
 }
 
 export interface PackageJSON {
