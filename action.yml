@@ -54,6 +54,10 @@ inputs:
     description: 'Fail silently if version already exists on the marketplace'
     required: false
     default: false
+  target:
+    description: 'Target architecture'
+    required: false
+    default: ''
 
 outputs:
   vsixPath:
