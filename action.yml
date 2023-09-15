@@ -55,7 +55,7 @@ inputs:
     required: false
     default: false
   target:
-    description: 'Target architecture'
+    description: 'Target architecture(s) the extension should run on'
     required: false
     default: ''
 
