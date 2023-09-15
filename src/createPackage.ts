@@ -33,6 +33,7 @@ function _convertToVSCECreateVSIXOptions(options: ActionOptions, targetVSIXPath:
     // Shallow copy of options
     const { baseContentUrl, baseImagesUrl, yarn: useYarn, packagePath: cwd, preRelease, dependencies } = { ...options };
     const result: IPackageOptions = { baseContentUrl, useYarn, baseImagesUrl, cwd, packagePath: targetVSIXPath, preRelease, dependencies };
+
     return result;
 }
 

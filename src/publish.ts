@@ -12,7 +12,8 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
         let options: PublishOptions;
 
         if (ovsxOptions.target) {
-            const targets = ovsxOptions.target.split(ovsxOptions.target);
+            const targets = ovsxOptions.target.split(' ');
+
             options = { ...ovsxOptions, targets, packagePath: [ovsxOptions.packagePath] };
         } else {
             options = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
