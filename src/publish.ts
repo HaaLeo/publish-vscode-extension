@@ -6,7 +6,6 @@ import { ActionOptions } from './types';
 
 async function publish(ovsxOptions: ActionOptions): Promise<void> {
     if (ovsxOptions.registryUrl === 'https://marketplace.visualstudio.com') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const vsceOptions = _convertToVSCEPublishOptions(ovsxOptions);
         await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);
     } else {
