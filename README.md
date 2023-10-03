@@ -96,7 +96,7 @@ You can set any or all of the following input parameters:
 |`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Is only considered when packaging an extension.
 |`dependencies` |boolean| no |`true` | Check that dependencies defined in `package.json` exist in `node_modules`. Set to `false` if using pnpm or yarn v2+ with PnP.
 |`skipDuplicate` |boolean| no |`false` | Fail silently if version already exists on the marketplace. Equivalent to the `--skip-duplicate` option of the vsce CLI.
-|`target` |string| no | - | Target architecture(s) the extension should run on
+|`target` |string| no | - | Target architecture(s) the extension should run on. Separate multiple targets with spaces. E.g.: `'win32-x64 linux-x64'`
 
 ## Outputs
 
