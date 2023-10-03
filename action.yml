@@ -9,7 +9,7 @@ branding:
 inputs:
   # Required
   pat:
-    description: 'Personal access token'
+    description: 'Personal access token.'
     required: true
 
   # Optional
@@ -17,7 +17,7 @@ inputs:
     description: 'Path to the vsix file to be published. Cannot be used together with packagePath.'
     required: false
   registryUrl:
-    description: 'Use the registry API at this base URL'
+    description: 'Use the registry API at this base URL.'
     required: false
     default: 'https://open-vsx.org'
   packagePath:
@@ -51,9 +51,13 @@ inputs:
     required: false
     default: true
   skipDuplicate:
-    description: 'Fail silently if version already exists on the marketplace'
+    description: 'Fail silently if version already exists on the marketplace.'
     required: false
     default: false
+  target:
+    description: 'Target architecture(s) the extension should run on.'
+    required: false
+    default: ''
 
 outputs:
   vsixPath:

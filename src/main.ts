@@ -55,5 +55,6 @@ function _getInputs(): ActionOptions {
         preRelease: core.getInput('preRelease') === 'true',
         dependencies: core.getInput('dependencies') === 'true',
         skipDuplicate: core.getInput('skipDuplicate') === 'true',
+        target: core.getInput('target') || undefined,
     };
 }

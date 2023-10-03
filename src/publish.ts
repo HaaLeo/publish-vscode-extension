@@ -6,11 +6,19 @@ import { ActionOptions } from './types';
 
 async function publish(ovsxOptions: ActionOptions): Promise<void> {
     if (ovsxOptions.registryUrl === 'https://marketplace.visualstudio.com') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const vsceOptions = _convertToVSCEPublishOptions(ovsxOptions);
         await vscePublishVSIX(ovsxOptions.extensionFile, vsceOptions);
     } else {
-        const options: PublishOptions = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
+        let options: PublishOptions;
+
+        if (ovsxOptions.target) {
+            const targets = ovsxOptions.target.split(' ');
+
+            options = { ...ovsxOptions, targets, packagePath: [ovsxOptions.packagePath] };
+        } else {
+            options = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
+        }
+
         const results = await ovsxPublish(options);
         results?.forEach(result => {
             if (result.status === 'rejected') {
@@ -22,7 +30,7 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
 
 function _convertToVSCEPublishOptions(options: ActionOptions): VSCEPublishOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, pat, yarn: useYarn, noVerify, dependencies, skipDuplicate, preRelease } = { ...options };
+    const { baseContentUrl, baseImagesUrl, pat, yarn: useYarn, noVerify, dependencies, skipDuplicate, preRelease, target } = { ...options };
     const result = {
         baseContentUrl,
         useYarn,
@@ -31,7 +39,8 @@ function _convertToVSCEPublishOptions(options: ActionOptions): VSCEPublishOption
         noVerify,
         dependencies,
         skipDuplicate,
-        preRelease
+        preRelease,
+        target
     };
     return result;
 }

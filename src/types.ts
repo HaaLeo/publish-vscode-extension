@@ -48,6 +48,16 @@ export interface ActionOptions {
      * Don't throw an error when the package version is already present in the registry
      */
     skipDuplicate?: boolean;
+
+    /**
+     * Target architecture(s) the extension should run on.
+     * This string needs to be formatted like 'arch1 arch2 arch3' when targeting multiple architectures.
+     *
+     * See the following for the possible target values:
+     *
+     * https://code.visualstudio.com/api/working-with-extensions/publishing-extension#platformspecific-extensions
+     */
+    target?: string;
 }
 
 export interface PackageJSON {

@@ -13,6 +13,7 @@ use(sinonChai);
 describe('publish', () => {
     let publishVSIXStub: SinonStub;
     let publishOpenVSXStub: SinonStub;
+
     before(() => {
         publishVSIXStub = stub(vsce, 'publishVSIX').resolves();
         publishOpenVSXStub = stub(ovsx, 'publish').resolves();
@@ -35,7 +36,8 @@ describe('publish', () => {
             noVerify: true,
             dependencies: true,
             skipDuplicate: false,
-            preRelease: false
+            preRelease: false,
+            target: 'win32-x64 linux-x64'
         });
 
         expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
@@ -46,7 +48,8 @@ describe('publish', () => {
             noVerify: true,
             dependencies: true,
             skipDuplicate: false,
-            preRelease: false
+            preRelease: false,
+            target: 'win32-x64 linux-x64'
         });
     });
 
@@ -58,7 +61,8 @@ describe('publish', () => {
             extensionFile: 'myExtensionFile',
             packagePath: 'myPackagePath',
             pat: 'myPersonalAccessToken',
-            yarn: false
+            yarn: false,
+            target: 'win32-x64 linux-x64'
         });
 
         expect(publishOpenVSXStub).to.have.been.calledOnceWithExactly({
@@ -68,7 +72,9 @@ describe('publish', () => {
             extensionFile: 'myExtensionFile',
             packagePath: ['myPackagePath'],
             pat: 'myPersonalAccessToken',
-            yarn: false
+            yarn: false,
+            targets: ['win32-x64', 'linux-x64'],
+            target: 'win32-x64 linux-x64'
         });
     });
 
