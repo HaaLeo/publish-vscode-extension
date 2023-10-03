@@ -6,11 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.5.0...master)
+
+## [1.5.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.5.0) 2023-10-03
+
 ### Added
 
-* Adds `--target` functionality for `vsce` and `osvx`. [#37](https://github.com/HaaLeo/publish-vscode-extension/issues/37).
+* Adds `--target` functionality for `vsce` and `osvx`. [#37](https://github.com/HaaLeo/publish-vscode-extension/issues/37). Contributed by [@alexravenna](https://github.com/alexravenna).
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.4.0...master)
+### Security
+* Updated dependencies to 
+    * `@vscode/vsce@2.21.1`
+    * `ovsx@0.8.3`
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.4.0...v1.5.0)
 
 ## [1.4.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.4.0) 2023-07-05
 
