@@ -71,7 +71,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Update Major Tag
         run: |
           MAJOR_VERSION=$(git describe --tags | grep -o "v[0-9]*")
