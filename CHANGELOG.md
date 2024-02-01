@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.5.0...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.6.0...master)
+
+## [1.6.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.6.0) 2024-02-01
+
+### Changed
+
+* Upgraded the action's node version to v20 [#50](https://github.com/HaaLeo/publish-vscode-extension/issues/50)
+* Changed build target from `es6` to `es2022`
+
+### Security
+* Updated dependencies to 
+    * `@vscode/vsce@2.23.0`
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.5.0...v1.6.0)
 
 ## [1.5.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.5.0) 2023-10-03
 

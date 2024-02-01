@@ -64,5 +64,5 @@ outputs:
     description: The path to the packaged and published VSIX file.
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
