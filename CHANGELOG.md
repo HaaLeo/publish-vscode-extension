@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.6.0...master)
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.6.1...master)
+
+## [1.6.1](https://github.com/HaaLeo/publish-vscode-extension/tree/1.6.1) 2024-02-02
+
+### Changed
+
+* Reverted build target back to `es6` ([#51](https://github.com/HaaLeo/publish-vscode-extension/issues/51))
+
+[All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v1.6.0...v1.6.1)
 
 ## [1.6.0](https://github.com/HaaLeo/publish-vscode-extension/tree/1.6.0) 2024-02-01
 
