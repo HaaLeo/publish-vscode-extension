@@ -27,10 +27,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
       - run: npm ci
       - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v1
