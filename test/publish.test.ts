@@ -1,10 +1,8 @@
-'use strict';
-
 import { expect, use } from 'chai';
 import { stub, SinonStub } from 'sinon';
 import * as sinonChai from 'sinon-chai';
 import * as vsce from '@vscode/vsce';
-import * as ovsx from 'ovsx';
+import * as ovsx from '../src/ovsx';
 
 import { publish } from '../src/publish';
 
@@ -16,7 +14,7 @@ describe('publish', () => {
 
     before(() => {
         publishVSIXStub = stub(vsce, 'publishVSIX').resolves();
-        publishOpenVSXStub = stub(ovsx, 'publish').resolves();
+        publishOpenVSXStub = stub(ovsx, 'ovsxPublish').resolves();
     });
 
     beforeEach(() => {
