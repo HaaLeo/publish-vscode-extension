@@ -33,11 +33,11 @@ jobs:
           node-version: 20
       - run: npm ci
       - name: Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
       - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
@@ -47,12 +47,12 @@ To package the extension only once and publish the **identical** `.vsix` file to
 
 ```yaml
 - name: Publish to Open VSX Registry
-  uses: HaaLeo/publish-vscode-extension@v1
+  uses: HaaLeo/publish-vscode-extension@v2
   id: publishToOpenVSX
   with:
     pat: ${{ secrets.OPEN_VSX_TOKEN }}
 - name: Publish to Visual Studio Marketplace
-  uses: HaaLeo/publish-vscode-extension@v1
+  uses: HaaLeo/publish-vscode-extension@v2
   with:
     pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
     registryUrl: https://marketplace.visualstudio.com
