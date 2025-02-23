@@ -6,7 +6,7 @@
 
 GitHub action to publish your VS Code Extension to the [Open VSX Registry](https://open-vsx.org/) or the [Visual Studio Marketplace](https://marketplace.visualstudio.com).
 
-> All breaking changes of **v1** are listed in the [changelog](CHANGELOG.md#changelog)
+> All breaking changes of **v2** are listed in the [changelog](CHANGELOG.md#changelog)
 
 ## Usage
 

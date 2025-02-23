@@ -1,6 +1,6 @@
 {
   "name": "publish-vscode-extension",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "GitHub action to publish your VS Code Extension to the Open VSX Registry.",
   "main": "dist/index.js",
   "scripts": {
