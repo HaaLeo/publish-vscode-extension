@@ -80,7 +80,7 @@ describe('publish', () => {
 
     it('should throw if publishing to Open VSX registry has failed', async () => {
         const failReason = 'some reason.';
-        const failedPromise = await Promise.allSettled([Promise.resolve(0), Promise.reject(failReason)]);
+        const failedPromise = await Promise.allSettled([Promise.resolve(0), Promise.reject(new Error(failReason))]);
         publishOpenVSXStub.resolves(failedPromise);
 
         await expect(
