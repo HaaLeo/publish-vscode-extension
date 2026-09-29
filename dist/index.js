@@ -3510,7 +3510,7 @@ function expand(str, isTop) {
   var isOptions = m.body.indexOf(',') >= 0;
   if (!isSequence && !isOptions) {
     // {a},b}
-    if (m.post.match(/,.*\}/)) {
+    if (m.post.match(/,(?!,).*\}/)) {
       str = m.pre + '{' + m.body + escClose + m.post;
       return expand(str);
     }
@@ -71517,7 +71517,7 @@ function expand(str, isTop) {
     var isOptions = m.body.indexOf(',') >= 0;
     if (!isSequence && !isOptions) {
       // {a},b}
-      if (m.post.match(/,.*\}/)) {
+      if (m.post.match(/,(?!,).*\}/)) {
         str = m.pre + '{' + m.body + escClose + m.post;
         return expand(str);
       }
@@ -225287,7 +225287,7 @@ module.exports = /*#__PURE__*/JSON.parse('["UTF-8","IBM866","ISO-8859-2","ISO-88
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"publish-vscode-extension","version":"2.0.0","description":"GitHub action to publish your VS Code Extension to the Open VSX Registry.","main":"dist/index.js","scripts":{"test":"nyc mocha \\"out/test/**/*.test.js\\"","coverage":"nyc report --reporter=lcov","build":"npm run build:ncc && npm run build:test","build:ncc":"ncc build src/index.ts --source-map --no-source-map-register","build:test":"tsc -p tsconfig.json","lint":"eslint . --ext .ts"},"repository":{"type":"git","url":"git+https://github.com/HaaLeo/publish-vscode-extension.git"},"keywords":["github","action","open","vsx","vscode","publish","Visual Studio Code"],"author":{"name":"HaaLeo","url":"https://github.com/HaaLeo"},"license":"SEE LICENSE IN LICENSE.txt","bugs":{"url":"https://github.com/HaaLeo/publish-vscode-extension/issues"},"homepage":"https://github.com/HaaLeo/publish-vscode-extension#readme","dependencies":{"@actions/core":"^1.11.1","@vscode/vsce":"^3.2.2","ovsx":"^0.10.1"},"devDependencies":{"@eslint/compat":"^1.2.7","@stylistic/eslint-plugin-ts":"^4.0.1","@types/chai":"^4.0.0","@types/chai-as-promised":"^7.0.0","@types/mocha":"^10.0.0","@types/node":"^20.0.0","@types/sinon":"^17.0.0","@types/sinon-chai":"^3.0.0","@typescript-eslint/eslint-plugin":"^8.0.0","@typescript-eslint/parser":"^8.0.0","@vercel/ncc":"^0.38.3","chai":"^4.0.0","chai-as-promised":"^7.0.0","eslint":"^9.0.0","eslint-plugin-import":"^2.25.3","eslint-plugin-prefer-arrow":"^1.2.3","mocha":"^11.0.0","nyc":"^17.0.0","sinon":"^19.0.0","sinon-chai":"^3.0.0","typescript":"^5.0.3"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"publish-vscode-extension","version":"2.1.0","description":"GitHub action to publish your VS Code Extension to the Open VSX Registry.","main":"dist/index.js","scripts":{"test":"nyc mocha \\"out/test/**/*.test.js\\"","coverage":"nyc report --reporter=lcov","build":"npm run build:ncc && npm run build:test","build:ncc":"ncc build src/index.ts --source-map --no-source-map-register","build:test":"tsc -p tsconfig.json","lint":"eslint . --ext .ts"},"repository":{"type":"git","url":"git+https://github.com/HaaLeo/publish-vscode-extension.git"},"keywords":["github","action","open","vsx","vscode","publish","Visual Studio Code"],"author":{"name":"HaaLeo","url":"https://github.com/HaaLeo"},"license":"SEE LICENSE IN LICENSE.txt","bugs":{"url":"https://github.com/HaaLeo/publish-vscode-extension/issues"},"homepage":"https://github.com/HaaLeo/publish-vscode-extension#readme","dependencies":{"@actions/core":"^1.11.1","@vscode/vsce":"^3.2.2","ovsx":"^0.10.1"},"devDependencies":{"@eslint/compat":"^1.2.7","@stylistic/eslint-plugin-ts":"^4.0.1","@types/chai":"^4.0.0","@types/chai-as-promised":"^7.0.0","@types/mocha":"^10.0.0","@types/node":"^20.0.0","@types/sinon":"^17.0.0","@types/sinon-chai":"^3.0.0","@typescript-eslint/eslint-plugin":"^8.0.0","@typescript-eslint/parser":"^8.0.0","@vercel/ncc":"^0.38.3","chai":"^4.0.0","chai-as-promised":"^7.0.0","eslint":"^9.0.0","eslint-plugin-import":"^2.25.3","eslint-plugin-prefer-arrow":"^1.2.3","mocha":"^11.0.0","nyc":"^17.0.0","sinon":"^19.0.0","sinon-chai":"^3.0.0","typescript":"^5.0.3"}}');
 
 /***/ })
 
