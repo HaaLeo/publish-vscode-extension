@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=HaaLeo&project=publish-vscode-extension&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # Publish VS Code Extension &#8212; GitHub Action
 
 [![Build, Lint, Test and Deploy](https://img.shields.io/github/actions/workflow/status/HaaLeo/publish-vscode-extension/CI.yml?style=flat-square&label=Lint%2C%20Build%2C%20Test%20and%20Deploy)](https://github.com/HaaLeo/publish-vscode-extension/actions?query=workflow%3A%22Build%2C+Lint%2C+Test+and+Deploy%22) [![Coverage Status](https://img.shields.io/coveralls/github/HaaLeo/publish-vscode-extension?style=flat-square)](https://coveralls.io/github/HaaLeo/publish-vscode-extension)  
