@@ -13,12 +13,15 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
     } else {
         let options: PublishOptions;
 
+        // Set explicitly: ovsx would otherwise use trusted publishing whenever it can get an OIDC token.
+        const trustedPublishing = Boolean(ovsxOptions.trustedPublishing);
+
         if (ovsxOptions.target) {
             const targets = ovsxOptions.target.split(' ');
 
-            options = { ...ovsxOptions, targets, packagePath: [ovsxOptions.packagePath] };
+            options = { ...ovsxOptions, trustedPublishing, targets, packagePath: [ovsxOptions.packagePath] };
         } else {
-            options = { ...ovsxOptions, packagePath: [ovsxOptions.packagePath] };
+            options = { ...ovsxOptions, trustedPublishing, packagePath: [ovsxOptions.packagePath] };
         }
 
         const results = await ovsxPublish(options);
@@ -32,11 +35,11 @@ async function publish(ovsxOptions: ActionOptions): Promise<void> {
 
 function _convertToVSCEPublishOptions(options: ActionOptions): VSCEPublishOptions {
     // Shallow copy of options
-    const { baseContentUrl, baseImagesUrl, pat, yarn: useYarn, noVerify, dependencies, skipDuplicate, preRelease, target } = { ...options };
-    const result = {
+    const { baseContentUrl, baseImagesUrl, pat, trustedPublishing, yarn: useYarn, noVerify, dependencies, skipDuplicate, preRelease, target } = { ...options };
+    const result: VSCEPublishOptions = {
         baseContentUrl,
         useYarn,
-        pat,
+        ...(trustedPublishing ? { oidc: true } : { pat }),
         baseImagesUrl,
         noVerify,
         dependencies,

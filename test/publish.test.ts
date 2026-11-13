@@ -71,8 +71,48 @@ describe('publish', () => {
             packagePath: ['myPackagePath'],
             pat: 'myPersonalAccessToken',
             yarn: false,
+            trustedPublishing: false,
             targets: ['win32-x64', 'linux-x64'],
             target: 'win32-x64 linux-x64'
+        });
+    });
+
+    it('should publish to Visual Studio Marketplace with OIDC instead of a token', async () => {
+        await publish({
+            registryUrl: 'https://marketplace.visualstudio.com',
+            extensionFile: 'myExtensionFile',
+            packagePath: 'myPackagePath',
+            trustedPublishing: true,
+            skipDuplicate: true,
+            preRelease: true
+        });
+
+        expect(publishVSIXStub).to.have.been.calledOnceWithExactly('myExtensionFile', {
+            baseContentUrl: undefined,
+            baseImagesUrl: undefined,
+            oidc: true,
+            useYarn: undefined,
+            noVerify: undefined,
+            dependencies: undefined,
+            skipDuplicate: true,
+            preRelease: true,
+            target: undefined
+        });
+    });
+
+    it('should publish to Open VSX registry with trusted publishing', async () => {
+        await publish({
+            registryUrl: 'https://open-vsx.org',
+            extensionFile: 'myExtensionFile',
+            packagePath: 'myPackagePath',
+            trustedPublishing: true
+        });
+
+        expect(publishOpenVSXStub).to.have.been.calledOnceWithExactly({
+            registryUrl: 'https://open-vsx.org',
+            extensionFile: 'myExtensionFile',
+            packagePath: ['myPackagePath'],
+            trustedPublishing: true
         });
     });
 
