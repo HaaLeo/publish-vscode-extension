@@ -175419,7 +175419,7 @@ function _getInputs() {
         // Set default value to undefined for not required inputs without default value
         extensionFile: core.getInput('extensionFile') || undefined,
         baseContentUrl: core.getInput('baseContentUrl') || undefined,
-        baseImagesUrl: core.getInput('baseImageUrl') || undefined,
+        baseImagesUrl: core.getInput('baseImagesUrl') || undefined,
         noVerify: core.getInput('noVerify') === 'true',
         preRelease: core.getInput('preRelease') === 'true',
         dependencies: core.getInput('dependencies') === 'true',
