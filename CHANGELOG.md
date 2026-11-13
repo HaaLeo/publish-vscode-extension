@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+* The `baseImagesUrl` input was ignored, because the action read it as `baseImageUrl`
+
 [All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v2.1.0...master)
 
 ## [v2.1.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v2.1.0) 2026-09-29
