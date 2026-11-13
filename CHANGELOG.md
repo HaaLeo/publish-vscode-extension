@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+* `trustedPublishing` option to publish to both registries with the job's OIDC token instead of a personal access token [#79](https://github.com/HaaLeo/publish-vscode-extension/issues/79)
+
+### BREAKING CHANGES
+* Updated dependencies to
+    * `@vscode/vsce@4.1.1`
+    * `ovsx@1.4.0`
+
 [All Changes](https://github.com/HaaLeo/publish-vscode-extension/compare/v2.1.0...master)
 
 ## [v2.1.0](https://github.com/HaaLeo/publish-vscode-extension/tree/v2.1.0) 2026-09-29

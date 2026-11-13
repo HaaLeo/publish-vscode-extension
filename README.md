@@ -59,12 +59,50 @@ To package the extension only once and publish the **identical** `.vsix` file to
     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 ```
 
+### Trusted Publishing
+
+Both registries accept [trusted publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-with-github-actions-and-trusted-publishing): the job exchanges its GitHub Actions OIDC token for a short-lived credential, so no personal access token is stored in the repository.
+Azure DevOps retires global personal access tokens on December 1, 2026, so publishing to the Visual Studio Marketplace from GitHub Actions needs trusted publishing from then on.
+
+1. Register the repository and workflow as a trusted publisher on each registry: on the Marketplace in your [publisher's management page](https://marketplace.visualstudio.com/manage), on Open VSX at [Settings > Trusted Publishers](https://open-vsx.org/user-settings/trusted-publishers). If you name a GitHub environment there, run the job in it.
+1. Give the publishing job the `id-token: write` permission and set `trustedPublishing: true` instead of `pat`.
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: release # Only if the trusted publisher names one
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - name: Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v3
+        id: publishToOpenVSX
+        with:
+          trustedPublishing: true
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v3
+        with:
+          trustedPublishing: true
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+```
+
+Any code that runs in a job with `id-token: write` can request the same OIDC token, including the install scripts of your dependencies and your `vscode:prepublish` script.
+To keep that code away from the token, package the extension in a separate job without the permission, pass the `.vsix` along as an artifact, and publish it with `extensionFile`.
+
 For a more complete and complex example one can check out the workflow of [`HaaLeo/vscode-timing`](https://github.com/HaaLeo/vscode-timing/blob/master/.github/workflows/cicd.yml#L1).
 
 ### Open VSX Registry
 
 To publish to the Open VSX Registry ensure that your [extension's namespace](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#2-create-the-namespace) was created **beforehand**.
-You need to set the `pat` parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token).
+You need to set the `pat` parameter to your [Open VSX access token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#1-create-an-access-token), or use [trusted publishing](#trusted-publishing).
 Further, you should ensure that you only publish an extension which is licensed.
 For more information regarding Open VSX' timeline and its extensions' licensing check out [Brian King's blog](https://blogs.eclipse.org/post/brian-king/open-vsx-registry-under-new-management) (section "Licensing" and "Timeline").
 
@@ -74,7 +112,7 @@ Therefore, I heavily encourage you to publish an extension with a (permissive) l
 
 ### Visual Studio Marketplace
 
-In order to upload your extension to the VS Marketplace you need to set the `pat` option to the corresponding [access token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token). 
+In order to upload your extension to the VS Marketplace you need to use [trusted publishing](#trusted-publishing), or set the `pat` option to the corresponding [access token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token) until those are retired. 
 Further, the `registryUrl` must be set to `https://marketplace.visualstudio.com`.
 
 
@@ -84,14 +122,15 @@ You can set any or all of the following input parameters:
 
 |Name |Type |Required? |Default |Description
 |-|-|-|-|-
-|`pat` |string  |yes |-|The personal access token to the corresponding registry.
+|`pat` |string  |yes, unless `trustedPublishing` is set |-|The personal access token to the corresponding registry.
+|`trustedPublishing` |boolean |no |`false` |Publish with the job's OIDC token instead of `pat`. See [Trusted Publishing](#trusted-publishing).
 |`extensionFile` |string  |no | - |Path to the vsix file to be published. This option will be preferred when set together with `packagePath`.
 |`registryUrl` |string  |no |`https://open-vsx.org` |Use the registry API at this base URL
 |`packagePath` |string |no | `./` |Path to the extension to be packaged and published. When `extensionFile` is set too `packagePath` is ignored.
 |`baseContentUrl` |string |no | - | Prepend all relative links in README.md with this URL.
 |`baseImagesUrl` |string |no | - | Prepend all relative image links in README.md with this URL.
 |`yarn` |boolean |no | `false` | Use yarn instead of npm while packing extension files.
-|`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. When using this option set the `pat` option to a stub value.
+|`dryRun` |boolean |no | `false` | Set this option to `true` to package your extension but do not publish it. Neither `pat` nor `trustedPublishing` is needed.
 |`noVerify` |boolean| no |`false` | Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true). Similar to vsce's `--noVerify` command line argument.
 |`preRelease` |boolean| no |`false` | Mark the extensions release as pre-release. Is only considered when packaging an extension.
 |`dependencies` |boolean| no |`true` | Check that dependencies defined in `package.json` exist in `node_modules`. Set to `false` if using pnpm or yarn v2+ with PnP.

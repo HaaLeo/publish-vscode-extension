@@ -7,10 +7,14 @@ branding:
   icon: package
 
 inputs:
-  # Required
+  # One of pat or trustedPublishing is required
   pat:
-    description: 'Personal access token.'
-    required: true
+    description: 'Personal access token. Cannot be used together with trustedPublishing.'
+    required: false
+  trustedPublishing:
+    description: 'Publish with the job''s OIDC token instead of a personal access token. The registry must list this repository and workflow as a trusted publisher, and the job needs the id-token: write permission.'
+    required: false
+    default: false
 
   # Optional
   extensionFile:

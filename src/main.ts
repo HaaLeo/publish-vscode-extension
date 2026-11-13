@@ -4,6 +4,7 @@ import * as core from '@actions/core';
 
 import * as packageJSON from '../package.json';
 import { createPackage } from './createPackage';
+import { validateCredentials } from './credentials';
 import { publish } from './publish';
 import { ActionOptions, PackageJSON } from './types';
 
@@ -16,6 +17,7 @@ export async function main(): Promise<void> {
 
     const options = _getInputs();
     core.debug(`Start action with options="${JSON.stringify(options)}".`);
+    validateCredentials(options);
 
     const vsixPath = await core.group('Package the Extension', () => createPackage(options));
     core.setOutput('vsixPath', vsixPath);
@@ -42,7 +44,8 @@ function _getInputs(): ActionOptions {
     }
 
     return {
-        pat: core.getInput('pat', { required: true }),
+        pat: core.getInput('pat') || undefined,
+        trustedPublishing: core.getInput('trustedPublishing') === 'true',
         registryUrl,
         packagePath: core.getInput('packagePath'), // Different naming convention than vsce's
         yarn: core.getInput('yarn') === 'true',

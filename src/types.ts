@@ -4,9 +4,15 @@ export interface ActionOptions {
     */
     registryUrl?: string;
     /**
-     * Personal access token.
+     * Personal access token. Cannot be used together with `trustedPublishing`.
      */
     pat?: string;
+    /**
+     * Publish without a personal access token, by exchanging the job's GitHub Actions OIDC token
+     * for a short-lived registry credential. The registry must list the repository and workflow
+     * as a trusted publisher, and the job needs the `id-token: write` permission.
+     */
+    trustedPublishing?: boolean;
     /**
      * Path to the vsix file to be published. Cannot be used together with `packagePath`.
      */
